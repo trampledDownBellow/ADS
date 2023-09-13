@@ -25,7 +25,7 @@ class Queue:
 queue = Queue()
 
 while True:
-    print("\n1. Додати елемент у чергу")
+    print("\n1. Додати елемент y чергу")
     print("2. Видалити елемент з черги")
     print("3. Вивести елементи черги")
     print("4. Вийти")
@@ -33,14 +33,14 @@ while True:
     choice = input("Виберіть опцію: ")
 
     if choice == '1':
-        item = input("Введіть елемент: ")
+        item = input
         queue.enqueue(item)
-        print(f"{item} додано у чергу")
+        print(item)
 
     elif choice == '2':
         if not queue.is_empty():
             removed_item = queue.dequeue()
-            print(f"{removed_item} видалено з черги")
+            print(removed_item)
         else:
             print("Черга порожня")
 

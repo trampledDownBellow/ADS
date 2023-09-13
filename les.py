@@ -1,39 +1,44 @@
-class numb:
-    def __init__(self):
-        self.stack = []
+stack = []
 
-    def is_even(self, num):
-        return num % 2 == 0
+def push_to_stack(number):
+    stack.append(number)
 
-    def push(self, num):
-        if self.is_even(num):
-            self.stack.append(num)
-
-    def pop(self):
-        if not self.is_empty():
-            return self.stack.pop()
+def split_stack(stack, even_stack, odd_stack):
+    if not stack:
+        return
+    else:
+        number = stack.pop()
+        split_stack(stack, even_stack, odd_stack) 
+        if number % 2 == 0:
+            even_stack.append(number)
         else:
-            print("Stack is empty")
-
-    def is_empty(self):
-        return len(self.stack) == 0
-
-    def peek(self):
-        if not self.is_empty():
-            return self.stack[-1]
-        else:
-            print("Stack is empty")
-
-    def size(self):
-        return len(self.stack)
+            odd_stack.append(number)
 
 
-even_stack = numb()
-even_stack.push(2)
-even_stack.push(4)
-even_stack.push(5) 
-even_stack.push(5)
-print("Stack:", even_stack.stack)  
-print("Pop:", even_stack.pop())     
-print("Peek:", even_stack.peek())   
-print("Stack size:", even_stack.size())  
+def print_stack(stack):
+    if not stack:
+        return
+    else:
+        number = stack.pop()
+        print(number)
+        print_stack(stack)  
+
+
+while True:
+        number = int(input("Введіть число (або 0 для завершення): "))
+        if number == 0:
+            break
+        push_to_stack(number)
+
+
+
+even_stack = []
+odd_stack = []
+
+split_stack(stack, even_stack, odd_stack)
+print("Стек чисел:")
+print_stack(stack)
+print("Парні числа:")
+print_stack(even_stack)
+print("Непарні числа:")
+print_stack(odd_stack)
