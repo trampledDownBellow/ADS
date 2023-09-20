@@ -25,7 +25,7 @@ def print_stack(stack):
 
 
 while True:
-        number = int(input("Введіть число (або 0 для завершення): "))
+        number = int(input("Введіть число (aБo 0 для завершення): "))
         if number == 0:
             break
         push_to_stack(number)
