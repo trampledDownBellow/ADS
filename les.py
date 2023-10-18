@@ -1,6 +1,6 @@
 stack = []
 
-def push_to_stack(number):
+def хуй(number):
     stack.append(number)
 
 def split_stack(stack, even_stack, odd_stack):
@@ -28,7 +28,7 @@ while True:
         number = int(input("Введіть число (aБo 0 для завершення): "))
         if number == 0:
             break
-        push_to_stack(number)
+        хуй(number)
 
 
 
